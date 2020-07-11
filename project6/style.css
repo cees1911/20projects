@@ -14,6 +14,11 @@
 
 body {
   font-family: "Lato", sans-serif;
+  transition: transform 0.3s ease;
+}
+
+body.show-nav{
+  transform: translateX(200px);
 }
 
 nav {
@@ -113,6 +118,10 @@ button:focus {
   right: 0;
 }
 
+.modal-container.show-modal{
+  display: block;
+}
+
 .modal {
   background-color: #fff;
   border-radius: 5px;
@@ -124,6 +133,8 @@ button:focus {
   transform: translate(-50%, -50%);
   max-width: 100%;
   width: 400px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-header {
@@ -163,4 +174,13 @@ button:focus {
 
 .close-btn:hover{
   background-color: #C11203;
+}
+
+@keyframes modalopen{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
